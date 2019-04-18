@@ -18,11 +18,26 @@
   margin-right: 10%;
 }
 
+// keyframes
+
+@keyframes smoothHiding {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 //CSS code
 
 *{
   margin: 0;
   padding: 0;
+}
+
+body{
+  overflow-x: hidden;
 }
 
 header{
@@ -40,6 +55,9 @@ header{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media screen and (max-width: 1400px){
+    margin-right: 5%;
+  }
 }
 
 .logo{
@@ -196,8 +214,8 @@ header{
   @include margins;
 }
 .serviceButtonContainer{
-  width: 310px;
-  height: 60px;
+  width: 255px;
+  height: 40px;
   border: 1px solid #ffda00;
   border-radius: 35px;
   transition: 0.5s;
@@ -207,7 +225,7 @@ header{
   @include fixCenter;
   a{
     font-family: 'Abel', sans-serif;
-    font-size: 19px;
+    font-size: 15px;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 1.26px;
@@ -263,6 +281,9 @@ header{
   background-color: #ffda00;
   border-radius: 3px;
   transition: 0.5s;
+  @media screen and (min-width: 745px) {
+  margin-top: 50px;
+  }
   i{
     font-size: 25px;
   }
@@ -290,10 +311,28 @@ header{
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  flex-wrap: wrap;
   @include margins;
+  @media screen and (max-width: 1200px){
+    :nth-child(4){
+      display: none;
+    }
+  }
+  @media screen and (max-width: 1000px){
+    .statsBlocksContainers:nth-child(3){
+      display: none;
+    }
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  @media screen and (max-width: 520px){
+    .statsBlocksContainers:nth-child(2){
+      display: none;
+    }
+  }
 }
 .statsBlocksContainers{
+  position: relative;
+  animation: 3s smoothHiding;
   height: 280px;
   width: 220px;
   margin: 0 10px 0 10px;
@@ -333,13 +372,15 @@ header{
   width: 100%;
 }
 .portfolioContainer{
-  height: 430px;
+  //height: 430px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   @include margins;
 }
 .portfolioTextContainer{
+  margin-top: 30px;
+  margin-bottom: 40px;
   width: 80%;
   &:hover{
     cursor: default;
@@ -353,22 +394,29 @@ header{
     letter-spacing: 3.75px;
   }
   p{
-    @media screen and (max-width: 680px){
-      font-size: 18px;
-    }
+    margin-top: 20px;
     color: #181a1f;
     font-family: 'Abel', sans-serif;
     font-size: 20px;
     font-weight: 400;
     letter-spacing: 1.5px;
   }
+  @media screen and (max-width: 680px){
+    h2{
+      font-size: 40px;
+    }
+    p{
+      font-size: 18px;
+    }
+  }
 }
 .portfolioButtonsContainer{
+  margin-top: 20px;
+  margin-bottom: 30px;
+  @include fixCenter;
   @media screen and (max-width: 680px){
     display: none;
   }
-  margin-top: 80px;
-  @include fixCenter;
 }
 .portfolioButtons{
   border: 1px solid #ffda00;
@@ -501,6 +549,10 @@ header{
   @include margins;
   a{
     @include forLink(#181a1f);
+    font-family: 'Abel', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 1.26px;
     border: 1px solid #ffda00;
     border-radius: 25px;
     padding: 10px 20px;
@@ -534,8 +586,9 @@ header{
       cursor: default;
     }
     @media screen and (max-width: 670px){
-      font-size: 30px;
+      font-size: 40px;
       line-height: 35px;
+      margin-top: 40px;
     }
   }
   p{
@@ -600,7 +653,6 @@ header{
     font-family: 'Abel', sans-serif;
     font-size: 50px;
     font-weight: 400;
-    line-height: 96px;
     text-transform: uppercase;
     letter-spacing: 3.75px;
   }
@@ -613,6 +665,15 @@ header{
     font-weight: 400;
     line-height: 25px;
     letter-spacing: 1.5px;
+  }
+  @media screen and (max-width: 600px){
+    h2{
+      margin-top: 40px;
+    }
+    p{
+      margin-top: 15px;
+      margin-bottom: 30px;
+    }
   }
 }
 .contactForm{
@@ -637,7 +698,7 @@ header{
   :nth-child(2){
     margin-left: 15px;
   }
-  @media screen and (max-width: 700px){
+  @media screen and (max-width: 820px){
     width: 80%;
   }
   @media screen and (max-width: 450px){
@@ -667,7 +728,7 @@ header{
       outline: 2px solid #ffda00;
     }
   }
-  @media screen and (max-width: 700px){
+  @media screen and (max-width: 820px){
     width: 80%;
   }
 }
@@ -678,9 +739,14 @@ header{
   margin-bottom: 50px;
   a{
     @include forLink(#181a1f);
+    font-family: 'Abel', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1.26px;
     border: 1px solid #ffda00;
     border-radius: 25px;
-    padding: 10px 80px;
+    padding: 10px 70px;
     transition: 0.5s;
     &:hover{
       cursor: pointer;
@@ -699,11 +765,21 @@ header{
   display: flex;
   align-items: center;
   justify-content: space-around;
-  flex-wrap: wrap;
+  @media screen and (max-width: 485px){
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 .contactBlocs{
   margin-top: 60px;
   margin-bottom: 60px;
+  @media screen {
+    margin: 0;
+    :nth-child(2){
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+  }
   a{
     display: flex;
     align-items: center;
@@ -767,12 +843,13 @@ footer{
   margin-bottom: 30px;
 }
 .footerSocialContainer{
-  width: 12%;
   margin-bottom: 50px;
   display: flex;
   align-items: center;
   justify-content: space-around;
   a{
+    margin-left: 5px;
+    margin-right: 5px;
     @include forLink(#ffffff);
     i{
       color: #ffffff;
@@ -817,3 +894,9 @@ footer{
   opacity: 0;
   visibility: hidden;
 }
+//.hide{
+//  display: none;
+//}
+//.show{
+//  display: block;
+//}
