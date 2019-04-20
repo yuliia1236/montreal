@@ -29,15 +29,12 @@
   }
 }
 
-//CSS code
+//SCSS code
 
 *{
   margin: 0;
   padding: 0;
-}
-
-body{
-  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 header{
@@ -608,17 +605,42 @@ header{
   @include margins;
   @include fixCenter;
   flex-direction: column;
+  position: relative;
 }
 .sliderLogos{
-  width: 80%;
+  width: 920px;
+  overflow: hidden;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+.sliderLogosList{
+  position: relative;
+  height: 120px;
+  width: 9999px;
+  padding: 0;
+  list-style: none;
+  margin-left: 0;
+  transition: 1s;
+}
+.logos{
+  width: 170px;
+  height: 100%;
+  float: left;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  margin-top: 90px;
+  justify-content: center;
+  margin: 0 30px;
+  a{
+    width: 170px;
+    display: block;
+    img{
+      width: 100%;
+      display: block;
+    }
+  }
 }
 .sliderSquares{
   @include fixCenter;
-  margin-top: 15px;
   margin-bottom: 90px;
 }
 .squares{
@@ -627,9 +649,14 @@ header{
   border-radius: 2px;
   background-color: #ffffff;
   transition: 0.5s;
-  &:nth-child(2){
-    margin-right: 10px;
-    margin-left: 10px;
+  //&:nth-child(2){
+  //  margin-right: 10px;
+  //  margin-left: 10px;
+  //}
+  margin-right: 7px;
+  margin-left: 7px;
+  &:last-child{
+    display: none;
   }
   &:hover{
     background-color: #ffda00;

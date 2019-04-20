@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/styles.css">
+    <script src="https://hammerjs.github.io/dist/hammer.min.js"></script>
     <script src="JS/scripts.js" defer></script>
     <title>Montreal</title>
 </head>
@@ -110,11 +111,11 @@
                 Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</p>
         </div>
         <div class="portfolioButtonsContainer">
-            <a href="#" class="portfolioButtons">all</a>
-            <a href="#" class="portfolioButtons">design</a>
-            <a href="#" class="portfolioButtons">code</a>
-            <a href="#" class="portfolioButtons">photography</a>
-            <a href="#" class="portfolioButtons">apps</a>
+            <a class="portfolioButtons">all</a>
+            <a class="portfolioButtons">design</a>
+            <a class="portfolioButtons">code</a>
+            <a class="portfolioButtons">photography</a>
+            <a class="portfolioButtons">apps</a>
         </div>
     </div>
 </section>
@@ -143,16 +144,27 @@
             sapien massa, convallis a pellentesque nec, egestas non nisi.</p>
     </div>
     <div class="slider">
-        <ul class="sliderLogos">
-            <li class="logos"><img src="IMG/Logo_1.svg" alt="client logo 1"></li>
-            <!--<li class="logos"><img src="IMG/Logo_2.svg" alt="client logo 2"></li>-->
-            <!--<li class="logos"><img src="IMG/Logo_3.svg" alt="client logo 3"></li>-->
-            <!--<li class="logos"><img src="IMG/Logo_4.svg" alt="client logo 4"></li>-->
-        </ul>
+        <div class="sliderLogos">
+            <ul class="sliderLogosList">
+                <li class="logos"><a href="#"><img src="IMG/Logo_1.svg" alt="logo 1"></a></li>
+                <li class="logos"><a href="#"><img src="IMG/Logo_2.svg" alt="logo 2"></a></li>
+                <li class="logos"><a href="#"><img src="IMG/Logo_3.svg" alt="logo 3"></a></li>
+                <li class="logos"><a href="#"><img src="IMG/Logo_4.svg" alt="logo 4"></a></li>
+                <li class="logos"><a href="#"><img src="IMG/logo_5.png" alt="logo 5"></a></li>
+                <li class="logos"><a href="#"><img src="IMG/logo_6.png" alt="logo 6"></a></li>
+                <li class="logos"><a href="#"><img src="IMG/logo_7.png" alt="logo 7"></a></li>
+                <li class="logos"><a href="#"><img src="IMG/logo_8.png" alt="logo 8"></a></li>
+                <li class="logos"><a href="#"><img src="IMG/logo_9.png" alt="logo 9"></a></li>
+                <li class="logos"><a href="#"><img src="IMG/logo_10.png" alt="logo 10"></a></li>
+                <li class="logos"><a href="#"><img src="IMG/logo_11.png" alt="logo 11"></a></li>
+                <li class="logos"><a href="#"><img src="IMG/logo_12.png" alt="logo 12"></a></li>
+            </ul>
+        </div>
         <div class="sliderSquares">
-            <div class="squares"></div>
-            <div class="squares"></div>
-            <div class="squares"></div>
+            <div class="squares" data-id="first" style="background-color: #ffda00"></div>
+            <div class="squares" data-id="second"></div>
+            <div class="squares" data-id="third"></div>
+            <div class="squares" data-id="fourth"></div>
         </div>
     </div>
 </section>
@@ -213,5 +225,6 @@
     </div>
 </footer>
 <div class="anchor hidden" id="toTopBtn"><a href="#top"><i class="fas fa-chevron-up"></i></a></div>
+<div class="myBlock" style="width: 200px; height: 200px; background-color: blue; "><div id="myElement" style="width: 100px; height: 100px; background-color: red; position: relative;"></div></div>
 </body>
 </html>
